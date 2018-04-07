@@ -23,7 +23,7 @@ public class Demo {
 
     private StringBuffer mResult = new StringBuffer();
 
-    private static String FILENAME = "D:/IdeaProjects/SpeechRecognize/resource/The last speech.mp3";
+    private static String FILENAME = "D:/IdeaProjects/SpeechRecognize/resource/26.wav";
 
     static {
         Setting.setShowLog(true);
@@ -82,7 +82,7 @@ public class Demo {
 
     /**
      * <b>Description:</b>按照块大小切割字节数组<br>
-     * 
+     *
      * @param buffer
      * @param length
      * @param spsize
@@ -114,7 +114,7 @@ public class Demo {
 
     /**
      * <b>Description:</b>读取音频文件<br>
-     * 
+     *
      * @param audioPath
      * @return
      * @Note <b>Author:</b> yankefei <br>
@@ -177,6 +177,8 @@ public class Demo {
 
         @Override
         public void onEvent(int eventType, int arg1, int agr2, String msg) {
+            System.out.println("onenvent:" + eventType);
+            System.out.println(msg);
         }
 
     };
