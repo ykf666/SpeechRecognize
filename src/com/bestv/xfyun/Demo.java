@@ -13,6 +13,9 @@ import com.iflytek.cloud.speech.SpeechConstant;
 import com.iflytek.cloud.speech.SpeechError;
 import com.iflytek.cloud.speech.SpeechRecognizer;
 import com.iflytek.cloud.speech.SpeechUtility;
+import com.iflytek.util.JsonParser;
+import jdk.nashorn.internal.parser.JSONParser;
+import org.json.JSONObject;
 
 public class Demo {
 
@@ -23,7 +26,7 @@ public class Demo {
 
     private StringBuffer mResult = new StringBuffer();
 
-    private static String FILENAME = "D:/IdeaProjects/SpeechRecognize/resource/26.wav";
+    private static String FILENAME = "D:/IdeaProjects/SpeechRecognize/resource/26_clip.wav";
 
     static {
         Setting.setShowLog(true);
@@ -78,6 +81,7 @@ public class Demo {
             maxWaitTime -= perWaitTime;
         }
         System.out.println("解析结果：" + mResult.toString());
+        System.out.println(JsonParser.parseIatResult(mResult.toString()));
     }
 
     /**
